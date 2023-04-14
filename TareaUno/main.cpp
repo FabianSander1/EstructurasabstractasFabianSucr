@@ -1,63 +1,66 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 
-//Aca hago todas mis clases con las que voy a estar trabajando.
-//Estoy pensando en hacer listas para poder imprimir toda la info.
-
-#include <iostream>
-
-int main() {
-    std::cout << "Hola\n";
-    return 0;
-}
+//Me di cuenta de que tengo que hacer primero las clases, en este caso se hicieron las clases Aula, Edificio, Finca y Campus. LE pongo un Hola mundo para ver que complie bien y que corra.
+//Mas adelante le voy a hacer la funcuin que imprima la info que le voy a meter en una funion main. MAs adelante subo el archivo hecho a mano. 
 
 
-
-class Aulas {
+class Aula {
 public:
     int id;
     int pupitres;
     bool proyector;
-    int piso;
+
+    Aula(int id, int pupitres, bool proyector)
+        : id(id), pupitres(pupitres), proyector(proyector) {}
 };
 
 class Edificio {
 public:
-    int num_pisos;
-    int num_aulas;
-    int num_buses;
-};
+    std::string tipo;
+    int id;
+    bool ascensor;
+    bool soda;
+    bool bus;
+    int parqueos;
 
-class EdificioParqueo : public Edificio {
-public:
-    int num_espacios;
-};
+    std::vector<Aula> aulas;
 
-class EdificioAulas : public Edificio {
-public:
-    int num_sodas;
+    Edificio(std::string tipo, int id, bool ascensor, bool soda, bool bus, int parqueos = 0)
+        : tipo(tipo), id(id), ascensor(ascensor), soda(soda), bus(bus), parqueos(parqueos) {}
+
+    void agregarAula(const Aula& aula) {
+        aulas.push_back(aula);
+    }
 };
 
 class Finca {
 public:
-    int num_edificios_aulas;
-    int num_edificios_parqueo;
+    int id;
+    std::vector<Edificio> edificios;
+
+    Finca(int id) : id(id) {}
+
+    void agregarEdificio(const Edificio& edificio) {
+        edificios.push_back(edificio);
+    }
 };
 
 class Campus {
 public:
-    int num_fincas;
+    std::string nombre;
     std::vector<Finca> fincas;
 
-    void imprimir() {
-        std::cout << "Campus:" << std::endl;
-        std::cout << "Número de fincas: " << num_fincas << std::endl;
-        std::cout << "Fincas:" << std::endl;
-        for (int i = 0; i < fincas.size(); i++) {
-            std::cout << "  Finca " << i+1 << ":" << std::endl;
-            std::cout << "    Edificios de aulas: " << fincas[i].num_edificios_aulas << std::endl;
-            std::cout << "    Edificios de parqueo: " << fincas[i].num_edificios_parqueo << std::endl;
-        }
+    Campus(std::string nombre) : nombre(nombre) {}
+
+    void agregarFinca(const Finca& finca) {
+        fincas.push_back(finca);
     }
 };
+
+
+int main() {
+  printf("¡Hola Mundo!");
+  return 0;
+}
