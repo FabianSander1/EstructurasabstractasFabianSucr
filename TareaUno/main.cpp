@@ -2,23 +2,28 @@
 #include <vector>
 #include <string>
 
-//Se agregó la función principal mani, donde se se agrega toda la info del pdf-
-//Como se puede ver se construye cada edificio, aula y edificui de parqueos
-//Se les tiene que ingresar la info por numero de aula, nuero de pupitre, booleanos para a soda, bus y para proyector y para ascensor
-//Próximamente se va a separar el archivo main a archivos hpp y cpp para ser mas ordenados
-//tambien se tiene que docmanetar de manera correcta
-
-
+/**
+ * @brief Clase Aula que representa un aula en el campus.
+ */
 class Aula {
 public:
     int id;
     int pupitres;
     bool proyector;
 
+    /**
+     * @brief Constructor de la clase Aula.
+     * @param id El identificador del aula.
+     * @param pupitres La cantidad de pupitres que tiene el aula.
+     * @param booleano indica si el aula tiene proyector o no.
+     */
     Aula(int id, int pupitres, bool proyector)
         : id(id), pupitres(pupitres), proyector(proyector) {}
 };
 
+/**
+ * @brief Clase Edificio que representa un edificio en el campus.
+ */
 class Edificio {
 public:
     std::string tipo;
@@ -30,43 +35,77 @@ public:
 
     std::vector<Aula> aulas;
 
+    /**
+     * @brief Constructor de la clase Edificio.
+     * @param id El identificador del edificio.
+     * @param ascensor indica si el edificio tiene ascensor o no.
+     * @param soda indica si el edificio tiene una soda o no.
+     * @param bus indica si el edificio tiene una parada de autobús o no.
+     * @param parqueos indica la cantidad de parqueos que tiene el edificio.
+     */
     Edificio(std::string tipo, int id, bool ascensor, bool soda, bool bus, int parqueos = 0)
         : tipo(tipo), id(id), ascensor(ascensor), soda(soda), bus(bus), parqueos(parqueos) {}
 
+    /**
+     * @brief agrega un aula al vector de aulas del edificio..
+     */
     void agregarAula(const Aula& aula) {
         aulas.push_back(aula);
     }
 };
 
+/**
+ * @brief Clase Finca que representa una finca en el campus.
+ */
 class Finca {
 public:
     int id;
     std::vector<Edificio> edificios;
 
+    /**
+     * @brief Constructor de la clase Finca.
+     * @param id, el identificador de la finca.
+     */
     Finca(int id) : id(id) {}
 
+    /**
+     * @brief Agrega un edificio al vector de edificios de la finca.
+     */
     void agregarEdificio(const Edificio& edificio) {
         edificios.push_back(edificio);
     }
 };
 
+/**
+ * @brief Clase Campus que representa un campus universitario.
+ */
 class Campus {
 public:
     std::string nombre;
     std::vector<Finca> fincas;
 
+    /**
+     * @brief Constructor de la clase Campus.
+     * @param nombre del campus.
+     */
     Campus(std::string nombre) : nombre(nombre) {}
 
+    /**
+     * @brief agrega una finca al vector de fincas del campus.
+     */
     void agregarFinca(const Finca& finca) {
         fincas.push_back(finca);
     }
 };
 
-void imprimirInfoCampus(const Campus& campus);
+/**
+ * @brief Imprime información sobre un campus.
 
 
-
-
+/**
+ * @brief Imprime información sobre un campus.
+ * @param El campus del cual se imprimirá la información.
+ */
 void imprimirInfoCampus(const Campus& campus) {
     std::cout << "Campus: " << campus.nombre << std::endl;
 
@@ -119,6 +158,12 @@ void imprimirInfoCampus(const Campus& campus) {
     }
 }
 
+
+/**
+ * @brief Función principal del programa.
+ * @details Crea un campus y lo imprime en pantalla, agrega información al constructor.
+ * @return 0 si el programa finaliza correctamente.
+ */
 
 int main() {
     Campus campus("Sede Rodrigo Facio");
