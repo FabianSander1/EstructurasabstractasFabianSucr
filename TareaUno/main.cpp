@@ -15,7 +15,7 @@ public:
      * @brief Constructor de la clase Aula.
      * @param id El identificador del aula.
      * @param pupitres La cantidad de pupitres que tiene el aula.
-     * @param booleano indica si el aula tiene proyector o no.
+     * @param proyector Indica si el aula tiene proyector o no.
      */
     Aula(int id, int pupitres, bool proyector)
         : id(id), pupitres(pupitres), proyector(proyector) {}
@@ -37,17 +37,19 @@ public:
 
     /**
      * @brief Constructor de la clase Edificio.
+     * @param tipo El tipo de edificio.
      * @param id El identificador del edificio.
-     * @param ascensor indica si el edificio tiene ascensor o no.
-     * @param soda indica si el edificio tiene una soda o no.
-     * @param bus indica si el edificio tiene una parada de autobús o no.
-     * @param parqueos indica la cantidad de parqueos que tiene el edificio.
+     * @param ascensor Indica si el edificio tiene ascensor o no.
+     * @param soda Indica si el edificio tiene una soda o no.
+     * @param bus Indica si el edificio está cerca de una parada de autobús o no.
+     * @param parqueos La cantidad de parqueos que tiene el edificio (por defecto 0).
      */
     Edificio(std::string tipo, int id, bool ascensor, bool soda, bool bus, int parqueos = 0)
         : tipo(tipo), id(id), ascensor(ascensor), soda(soda), bus(bus), parqueos(parqueos) {}
 
     /**
-     * @brief agrega un aula al vector de aulas del edificio..
+     * @brief Agrega un aula al vector de aulas del edificio.
+     * @param aula El aula se agregar.
      */
     void agregarAula(const Aula& aula) {
         aulas.push_back(aula);
@@ -64,12 +66,13 @@ public:
 
     /**
      * @brief Constructor de la clase Finca.
-     * @param id, el identificador de la finca.
+     * @param id El identificador de la finca.
      */
     Finca(int id) : id(id) {}
 
     /**
      * @brief Agrega un edificio al vector de edificios de la finca.
+     * @param edificio El edificio a agregar.
      */
     void agregarEdificio(const Edificio& edificio) {
         edificios.push_back(edificio);
@@ -86,12 +89,13 @@ public:
 
     /**
      * @brief Constructor de la clase Campus.
-     * @param nombre del campus.
+     * @param nombre El nombre del campus.
      */
     Campus(std::string nombre) : nombre(nombre) {}
 
     /**
-     * @brief agrega una finca al vector de fincas del campus.
+     * @brief Agrega una finca al vector de fincas del campus.
+     * @param finca La finca a agregar.
      */
     void agregarFinca(const Finca& finca) {
         fincas.push_back(finca);
@@ -100,11 +104,12 @@ public:
 
 /**
  * @brief Imprime información sobre un campus.
-
+ * @param campus El campus del cual se imprimirá la información
+*/
 
 /**
  * @brief Imprime información sobre un campus.
- * @param El campus del cual se imprimirá la información.
+ * @param campus El campus del cual se imprimirá la información.
  */
 void imprimirInfoCampus(const Campus& campus) {
     std::cout << "Campus: " << campus.nombre << std::endl;
@@ -161,7 +166,7 @@ void imprimirInfoCampus(const Campus& campus) {
 
 /**
  * @brief Función principal del programa.
- * @details Crea un campus y lo imprime en pantalla, agrega información al constructor.
+ * @details Crea un campus universitario y lo imprime en pantalla.
  * @return 0 si el programa finaliza correctamente.
  */
 
@@ -169,6 +174,12 @@ int main() {
     Campus campus("Sede Rodrigo Facio");
 
     // Finca 1
+    /**
+     * @brief Se inserta la información dentro de los constructores de finca 1, de cada edificio
+     * @param Se inserta el tipo de edificio, el ID, la cantidad de pupitres en la clase y los booleanos.
+     */ 
+
+    
     Finca finca1(1);
     Edificio edificio1("Aulas", 1, false, false, true);
     edificio1.agregarAula(Aula(1, 30, true));
@@ -192,10 +203,16 @@ int main() {
 
     Edificio edificioParqueo1("Parqueo", 5, true, false, false, 700);
     finca1.agregarEdificio(edificioParqueo1);
-
+    /**
+     * @brief Se agrega Finca 1 al Campus
+     */
     campus.agregarFinca(finca1);
 
     // Finca 2
+    /**
+     * @brief Se inserta la información dentro de los constructores de finca 2, de cada edificio
+     * @param . inserta el tipo de edificio, el ID, la cantidad de pupitres en la clase y los booleanos.
+     */
     Finca finca2(2);
     Edificio edificio5("Aulas", 6, false, false, false);
     edificio5.agregarAula(Aula(9, 20, true));
@@ -212,10 +229,16 @@ int main() {
     edificio7.agregarAula(Aula(14, 20, true));
     edificio7.agregarAula(Aula(15, 36, false));
     finca2.agregarEdificio(edificio7);
-
+    /**
+     * @brief Se agrega Finca 2 al Campus
+     */
     campus.agregarFinca(finca2);
 
     // Finca 3
+    /**
+     * @brief Se inserta la información dentro de los constructores de finca 3, de cada edificio
+     * @param Se inserta el tipo de edificio, el ID, la cantidad de pupitres en la clase y los booleanos.
+     */
     Finca finca3(3);
     Edificio edificio8("Aulas", 9, true, true, true);
     edificio8.agregarAula(Aula(16, 20, false));
@@ -224,11 +247,16 @@ int main() {
 
     Edificio edificioParqueo2("Parqueo", 10, true, false, true, 300);
     finca3.agregarEdificio(edificioParqueo2);
-
+    /**
+     * @brief Se agrega Finca 3 al Campus
+     */
     campus.agregarFinca(finca3);
-
+    /**
+     * @brief Se imprime la información de ntro del Campus
+     */
     imprimirInfoCampus(campus);
 
     return 0;
     
 }
+
