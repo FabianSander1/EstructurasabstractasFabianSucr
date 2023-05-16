@@ -97,3 +97,5 @@ vector<Empleado> buscarPorSalario(vector<Empleado> empleados, double salarioMini
     return resultado;
 }
 
+
+
