@@ -1,3 +1,6 @@
+/// @file
+/// @brief Implementación de un programa para buscar empleados
+
 #include <iostream>
 #include <limits>
 #include <vector>
@@ -6,12 +9,24 @@
 
 using namespace std;
 
+/**
+ * @brief Punto de entrada al programa
+ *
+ * Este programa permite buscar empleados por departamento o rango de salario.
+ *
+ * @return 0 al finalizar correctamente.
+ */
 int main() {
+    /// Archivo de datos de los empleados
     string archivo = "Empleados.csv";
+
+    /// Lista de empleados
     vector<Empleado> empleados = leerArchivo(archivo);
     
+    /// Opción seleccionada por el usuario
     string input;
     int opcion;
+    
     do {
         cout << "1. Buscar por departamento" << endl;
         cout << "2. Buscar por rango de salario" << endl;
@@ -19,7 +34,7 @@ int main() {
         cout << "Ingrese una opcion: ";
         cin >> input;
 
-
+        /// Comprobar si la entrada es válida
         if (input.find_first_not_of("0123456789") != string::npos) {
             cout << "Opción inválida, intente de nuevo" << endl;
             continue;
@@ -28,11 +43,13 @@ int main() {
 
         switch(opcion) {
             case 1: {
+                /// Nombre del departamento a buscar
                 string departamentoBusqueda;
                 cout << "Ingrese el departamento a buscar: ";
                 cin.ignore();  
                 getline(cin, departamentoBusqueda);                
 
+                /// Resultados de la búsqueda por departamento
                 vector<Empleado> resultadoDepartamento = buscarPorDepartamento(empleados, departamentoBusqueda);
 
                 if (!resultadoDepartamento.empty()) {
@@ -51,7 +68,10 @@ int main() {
                 break;
             }
             case 2: {
+                /// Salario mínimo y máximo a buscar
                 double salarioMin, salarioMax;
+                
+                /// Solicitar y validar el salario mínimo
                 while (true) {
                     cout << "Ingrese el salario minimo: ";
                     cin >> salarioMin;
@@ -65,6 +85,7 @@ int main() {
                     }
                 }
 
+                /// Solicitar y validar el salario máximo
                 while (true) {
                     cout << "Ingrese el salario maximo: ";
                     cin >> salarioMax;
@@ -78,8 +99,10 @@ int main() {
                     }
                 }
 
+                /// Resultados de la búsqueda por rango de salario
                 vector<Empleado> resultadoSalario = buscarPorSalario(empleados, salarioMin, salarioMax);
 
+                /// @brief Continuación del case 2
                 if (!resultadoSalario.empty()) {
                     cout << "Empleados encontrados en el rango de salario $" << salarioMin << " a $" << salarioMax << ":" << endl;
                     for (const auto& empleado : resultadoSalario) {
@@ -106,5 +129,8 @@ int main() {
         }
     } while(opcion != 0);
 
+    /// @return La función main siempre debe retornar un valor. En este caso, se retorna 0 para indicar que el programa ha finalizado correctamente.
     return 0;
 }
+
+
