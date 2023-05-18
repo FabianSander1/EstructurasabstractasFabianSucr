@@ -2,4 +2,4 @@
 
 ##Para correr el archivo en la terminal con makefile: mingw32-make make (el makefile corre el programa y tambien abre en el navegador la pagina web)
 
-##Link de la pagina web: file:///C:/Estructuras/tarea3estruc/html/index.html
+##Link de la pagina web: file:///C:/Estructuras/tarea3estructuras/tarea3estruc/html/index.html
