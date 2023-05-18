@@ -18,7 +18,7 @@ using namespace std;
  */
 int main() {
     /// Archivo de datos de los empleados
-    string archivo = "Empleados.csv";
+    std::string archivo = "../../employees.csv";
 
     /// Lista de empleados
     vector<Empleado> empleados = leerArchivo(archivo);
