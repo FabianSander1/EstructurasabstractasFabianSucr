@@ -1,0 +1,70 @@
+# Programa de Gestión de Empleados
+
+Este proyecto consta de tres archivos: `main.py`, `clases.py` y `funciones.py`.
+
+## main.py
+
+El archivo `main.py` contiene la función principal `main()`. Esta función realiza lo siguiente:
+
+1. Define la ruta del archivo CSV que contiene la información de los empleados.
+2. Lee el archivo CSV y almacena la información de cada empleado en una lista.
+3. Entra en un bucle que presenta al usuario tres opciones:
+    - Buscar empleados por departamento.
+    - Buscar empleados por rango de salario.
+    - Salir del programa.
+4. Si el usuario elige buscar por departamento o rango de salario, el programa solicita la entrada necesaria, realiza la búsqueda y presenta los resultados al usuario.
+5. El programa se ejecutará hasta que el usuario elija salir.
+
+## clases.py
+
+El archivo `clases.py` define una dataclass `Empleado`. Esta clase tiene cinco atributos: `nombre`, `correo`, `edad`, `departamento` y `salario`.
+
+## funciones.py
+
+El archivo `funciones.py` define varias funciones útiles:
+
+- `correo_valido(correo)`: Verifica si un correo electrónico cumple con el patrón de un correo válido. Retorna `True` si es válido, y `False` de lo contrario.
+- `leer_archivo(nombre_archivo)`: Lee un archivo CSV y crea una lista de objetos `Empleado`. Si el correo del empleado no es válido, se reemplaza por "Correo inválido".
+- `buscar_por_departamento(empleados, departamento)`: Retorna una lista de empleados que pertenecen a un departamento específico.
+- `buscar_por_salario(empleados, salario_min, salario_max)`: Retorna una lista de empleados cuyo salario se encuentra dentro de un rango específico.
+
+## Cómo correr el programa
+
+Para correr el programa, simplemente ejecuta el acomendo `mingw32-make run`. Si eso no funciona con el clasico `py main.py` tambien funciona.
+
+## Comparación entre los dos códigos de Tarea4 y Tarea3
+
+Este documento compara dos implementaciones diferentes de un sistema de búsqueda de empleados. La primera implementación está escrita en Python y la segunda en C++. 
+
+### Comparaciones principales
+
+#### 1. Lenguaje de programación
+
+- El primer código está escrito en **Python**, un lenguaje de alto nivel.
+- El segundo código está escrito en **C++**.
+
+#### 2. Manejo de los empleados
+
+- El primer código utiliza una **clase Empleado** definida con `@dataclass`, que es una característica de Python para simplificar la definición de clases.
+- El segundo código también utiliza una **clase Empleado**, pero no utiliza ninguna característica similar a `@dataclass`.
+
+#### 3. Validación de correo electrónico
+
+- El primer código incluye una función `correo_valido()` que valida los correos electrónicos y otra información.
+- El segundo código no incluye ninguna validación similar para los correos electrónicos de los empleados.
+
+#### 4. Manejo de archivos
+
+- Ambos códigos leen la información de los empleados desde un archivo CSV, pero la forma en que lo hacen difiere debido a las diferencias entre Python y C++. Python tiene la capacidad de manejar archivos CSV de manera más directa.
+
+#### 5. Búsqueda de empleados
+
+- En ambos códigos, las funciones de búsqueda de empleados (`buscar_por_departamento()` y `buscar_por_salario()`) son similares.
+- La diferencia principal es que la versión Python utiliza listas para realizar la búsqueda, mientras que la versión C++ utiliza bucles for.
+
+#### 6. Interfaz de usuario
+
+- Ambos códigos proporcionan una interfaz de texto que permite al usuario buscar empleados por departamento o rango de salario.
+
+
+
