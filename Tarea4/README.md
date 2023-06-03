@@ -1,6 +1,18 @@
-# Programa de Gestión de Empleados
+# Nombre
 
-Este proyecto consta de tres archivos: `main.py`, `clases.py` y `funciones.py`.
+Herramienta de búsqueda de empleados de una empresa
+
+# Descripción
+
+Este proyecto consta de tres archivos: `main.py`, `clases.py` y `funciones.py`, los cuales se fucionan para crear un programa, que lee la información de un documento donde está la información de los empleados de una empresa, pueda filtrar y desplegar la información de los empleados que cumplen con los requisitos de búsqueda del usuario. 
+
+# Uso
+
+Al correr el programa, se va a desplegar un menú el cual solo recibe tres opciones (0, 1 o 2). La primera opción (0) es para salirse del programa, la segunda opción (1) es para filtrar la información de los empleados por departamento y la tercera opción (2) es para filtar la información de los empleados que cumplen con un salario que está en el rango de entrada del usuario.
+
+# Autor
+
+FabianSander1 (Fabián Sander Hangen).
 
 ## main.py
 
@@ -30,7 +42,7 @@ El archivo `funciones.py` define varias funciones útiles:
 
 ## Cómo correr el programa
 
-Para correr el programa, simplemente ejecuta el acomendo `mingw32-make run`. Si eso no funciona con el clasico `py main.py` tambien funciona.
+Para correr el programa, simplemente ejecuta el acomendo `mingw32-make run`. Si eso no funciona, se puede escribir `py main.py` en la consola.
 
 ## Comparación entre los dos códigos de Tarea4 y Tarea3
 
