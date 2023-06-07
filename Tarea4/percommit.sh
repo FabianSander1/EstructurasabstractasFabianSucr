@@ -1,8 +1,11 @@
 #!/bin/bash
 
-git diff --staged --name-only | grep '\.py$' | xargs flake8
+#Run Flake8 on staged files
+git diff --cached --name-only --diff-filter=AM | grep '.py$' | xargs flake8 
 
-if [ $? -ne 0 ]; then
-    echo "Error en flake8, revisar formato..."
-    exit 1
+#If Flake8 found errors, exit with a non-zero status code
+flake8_status=$?
+if [ $flake8_status -ne 0 ]; then
+    echo "Error, viola las reglas de flake8, revisar formato"
+    exit $flake8_status
 fi
