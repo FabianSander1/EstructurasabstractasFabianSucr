@@ -42,7 +42,7 @@ El archivo `funciones.py` define varias funciones útiles:
 
 ## Cómo correr el programa
 
-Para correr el programa, simplemente ejecuta el acomendo `mingw32-make run`. Si eso no funciona, se puede escribir `py main.py` en la consola.
+Para correr el programa, simplemente ejecuta el acomendo `mingw32-make`. Si eso no funciona, se puede escribir `py main.py` en la consola.
 
 ## Comparación entre los dos códigos de Tarea4 y Tarea3
 
@@ -77,6 +77,4 @@ Este documento compara dos implementaciones diferentes de un sistema de búsqued
 #### 6. Interfaz de usuario
 
 - Ambos códigos proporcionan una interfaz de texto que permite al usuario buscar empleados por departamento o rango de salario.
-
-
 

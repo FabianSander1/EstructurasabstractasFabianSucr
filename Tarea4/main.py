@@ -5,7 +5,7 @@ from funciones import leer_archivo, buscar_por_departamento, buscar_por_salario
 # Función principal del programa
 def main():
     # Busca archivo CSV
-    ruta_archivo = os.path.join("..", "..", "employees.csv")
+    ruta_archivo = os.path.join("../../employees.csv")
 
     # Leer el archivo y obtener una lista de empleados
     empleados = leer_archivo(ruta_archivo)

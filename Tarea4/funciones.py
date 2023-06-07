@@ -17,7 +17,7 @@ def edad_valida(edad):
 
 # Funcion que verifica si el departamento es alfabético
 def departamento_valido(departamento):
-    return departamento.isalpha()
+    return all(c.isalpha() or c.isspace() for c in departamento)
 
 
 # Funcion que verifica si el salario es un número entero o flotante
@@ -58,7 +58,7 @@ def leer_archivo(nombre_archivo):
                 if not departamento_valido(departamento):
                     departamento = "Departamento invalido"
                 if not salario_valido(salario):
-                    salario = "Salario invalido"
+                    salario = 0
                 else:
                     salario = float(salario)
 
@@ -79,5 +79,16 @@ def buscar_por_departamento(empleados, departamento):
 # Función para buscar empleados cuyo salario se encuentra dentro
 # de un rango dado.
 def buscar_por_salario(empleados, salario_min, salario_max):
-    return [empleado for empleado in empleados
-            if salario_min <= empleado.salario <= salario_max]
+    for empleado in empleados:
+        try:
+            assert salario_min <= empleado.salario <= salario_max
+        except AssertionError:
+            print(f"Error con empleado: {empleado}")
+            print(f"salario_min: {salario_min}, "
+                  f"salario empleado: {empleado.salario}, "
+                  f"salario_max: {salario_max}")
+    return [
+        empleado
+        for empleado in empleados
+        if salario_min <= empleado.salario <= salario_max
+    ]
