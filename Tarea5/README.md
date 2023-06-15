@@ -2,6 +2,11 @@
 
 Análisis de tráfico fronterizo entre Estados Unidos y sus vecinos
 
+## Cómo correr el programa
+
+Para ejecutar el programa, simplemente ejecuta el comando mingw32-make. Si eso no funciona, puedes escribir py main.py en la consola.
+
+En este caso, se muestra una parte del DataFrame filtrado, que contiene un total de 100 líneas de información para analizar. Luego, se muestra una ventana con gráficos que representan los resultados del análisis realizado en el programa.
 
 ## Descripción
 
@@ -13,10 +18,6 @@ Los datos utilizados en este proyecto están disponibles en [https://data.bts.go
 
 FabianSander1 (Fabián Sander Hangen).
 
-## Cómo correr el programa
-
-Para correr el programa, simplemente ejecuta el acomendo `mingw32-make`. Si eso no funciona, se puede escribir `py main.py` en la consola.
-
 ## Cómo funciona
 
 El programa consta de tres archivos:
@@ -27,21 +28,21 @@ El programa consta de tres archivos:
 
 3. `main.py`: Este archivo se encarga de llamar a la función `graficar` y mostrar los gráficos resultantes.
 
-## Resultados e interpretación
+## Interpretación
 
 Los resultados del análisis proporcionan información detallada sobre los patrones de tráfico fronterizo. Estos patrones se representan a través de tres gráficos: distribución de entradas por frontera, los seis estados más transitados y los cinco medios de transporte más comunes.
 
 ### Distribución de entradas por frontera
 
-El primer gráfico muestra la distribución de entradas por frontera. Esto puede ayudar a entender qué fronteras son las más transitadas y podrían requerir más recursos y personal.
+El primer gráfico muestra la distribución de entradas por frontera. Esto ayuda a comprender qué fronteras tienen mayor tráfico y podrían requerir más recursos y personal. En los resultados se puede observar que la frontera entre Estados Unidos y Canadá es la más transitada, con una dominancia del 78% frente al 22%.
 
 ### Los seis estados más transitados
 
-El segundo gráfico muestra los seis estados más transitados. Esta información puede ser útil para determinar qué estados pueden necesitar más apoyo en términos de infraestructura y recursos de seguridad.
+El segundo gráfico muestra los seis estados más transitados. En este caso, se puede observar que el estado más transitado es Dakota del Norte, con un total de 19, seguido de Texas y Washington, y finalmente, con un total entre 10 y 7, están Maine, Montana y Nueva York. Esta información puede ser útil para determinar qué estados pueden necesitar más apoyo en términos de infraestructura y recursos de seguridad.
 
 ### Los cinco medios de transporte más comunes
 
-El tercer gráfico muestra los cinco medios de transporte más comunes utilizados para cruzar la frontera. Este análisis puede proporcionar información sobre los modos de transporte que podrían requerir mayor atención en términos de mantenimiento de infraestructuras y medidas de seguridad.
+El tercer gráfico muestra los cinco medios de transporte más comunes utilizados para cruzar la frontera. Este análisis proporciona información sobre los modos de transporte que podrían requerir mayor atención en términos de mantenimiento de infraestructuras y medidas de seguridad. Si se analiza este gráfico, se puede observar que todos los medios de transporte están equilibrados. En este caso, los camiones, los peatones y los vehículos personales son los que dominan, seguidos de cerca por los camiones cargados y los camiones vacíos.
 
 ## Conclusiones y observaciones
 
