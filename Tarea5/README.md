@@ -55,4 +55,4 @@ Los hallazgos de este análisis pueden tener varias aplicaciones, como ayudar a 
 
 ## Resultados
 
-![Gráficos](Tarea5/imagen.png)
+[![imagen.png](https://i.postimg.cc/T1SJJ5GM/imagen.png)](https://postimg.cc/WqGZ23hX)
