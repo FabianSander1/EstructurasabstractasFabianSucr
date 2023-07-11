@@ -49,6 +49,8 @@ print(nueva_lista)
 
 En este cas se comprimio el total de 8 lineas de código en 3 lineas. En este caso se toma ventaja de que los if y los else son comprimibles, por eso es que se ahorra espacio y esta práctica es tan utilizada.
 
+Codigo:
+[![imagen1.png](https://i.postimg.cc/595tzRjz/imagen1.png)](https://postimg.cc/NLMYqb6G)
    
 ### Explique el concepto de plantillas (templates) en C++. ¿Cuál es su utilidad y cómo se utilizan en la programación genérica?
 
@@ -90,6 +92,9 @@ int main() {
 }
 
 En este caso se sobrecarga el operador +, ya que se suman los elementos de de clase "Box".
+
+Codigo:
+[![imagen2.png](https://i.postimg.cc/hjWSzLBM/imagen2.png)](https://postimg.cc/ns28NQMQ)
 
 ### Explique la diferencia entre una función y un método en Python. ¿Cómo se accede a un método de una clase y qué es el argumento self?
 
