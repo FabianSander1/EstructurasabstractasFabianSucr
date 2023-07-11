@@ -32,21 +32,6 @@ La compresión de listas en el lengiuaje de programacóon de Python es una forma
    
 Ejemplo:
 
-numeros = [1, 2, 3, 4, 5]
-nueva_lista = []
-for numero in numeros:
-    if numero % 2 == 0:
-        nueva_lista.append(numero * 2)
-    else:
-        nueva_lista.append(numero * 3)
-print(nueva_lista)
-
-Nuevo:
-
-numeros = [1, 2, 3, 4, 5]
-nueva_lista = [numero * 2 if numero % 2 == 0 else numero * 3 for numero in numeros]
-print(nueva_lista)
-
 En este cas se comprimio el total de 8 lineas de código en 3 lineas. En este caso se toma ventaja de que los if y los else son comprimibles, por eso es que se ahorra espacio y esta práctica es tan utilizada.
 
 Codigo:
@@ -61,35 +46,6 @@ Las plantillas en C++ son características que se utilizan en la programación c
 La sobrecarga de operadores en C++ permite que los operadres se comporten de una manera distinta, dependiendo del deseo del creador o usuario. Esto depende de los tipos de los operandos. ESta práctica permite que el código sea mas fácil de entender y utilizar y  permite redefinir el comportamiento de los operadores estándar (como +, -, *, /,). Esta práctica ayuda a que las clases persobnalizadas sean utilizadas de manera intuitiva para el operador.
 
 Ejemplo:
-
-#include <iostream>
-
-class Box {
-private:
-    int content;
-
-public:
-    Box(int content = 0) : content(content) {}
-
-    // Sobrecargar el operador +
-    Box operator+(const Box& b) {
-        return Box(this->content + b.content);
-    }
-
-    void print() const {
-        std::cout << "Box(" << content << ")\n";
-    }
-};
-
-int main() {
-    Box b1(10);
-    Box b2(20);
-    Box b3 = b1 + b2;  // Esto es posible gracias a la sobrecarga del operador +
-
-    b3.print();  // Imprime: Box(30)
-
-    return 0;
-}
 
 En este caso se sobrecarga el operador +, ya que se suman los elementos de de clase "Box".
 
