@@ -4,9 +4,11 @@ Autor: Fabian Sander Hangen C07336
 ## Correr cada programa:
 Calculadora en C++:
 En la terminal se corre "g++ .\calculadora.cpp -o .\calculadora.exe" se crea el ejecutable y se tiene que ejecutar con el comando ".\calculadora.exe".
+Puede ser que si se corre el programa en linux el correr el programa sea diferente, e porgrama se desarrolla en Windows con los comandos dichos y corre de manera correcta.
 
 Convertidor de cadena en Python:
 Hay que correr el comando "py cadena.py".
+Puede ser que si se corre el programa en linux el correr el programa sea diferente, le porgrama se desarrolla en Windows con los comandos dichos y corre de manera correcta.
 
 ## Preguntas y Respuestas
 
